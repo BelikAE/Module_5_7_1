@@ -4,7 +4,6 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using Prism.Commands;
 using RevitAPITrainingLibrary;
-//using RevitAPITrainingViewsSchedules.Wrappers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
