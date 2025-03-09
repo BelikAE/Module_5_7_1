@@ -1,0 +1,49 @@
+﻿<Window x:Class="Module_5_7_1.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Module_5_7_1"
+             mc:Ignorable="d" 
+             SizeToContent="WidthAndHeight"
+             MinWidth="300"
+        Title="Создание листов">
+    <StackPanel>
+        <Label Content="Выберите остновную надпись"
+               Margin="5"/>
+        <ComboBox ItemsSource="{Binding TitleBlocks}"
+                  DisplayMemberPath="Name"
+                  SelectedItem="{Binding SelectedTitleBlock}"
+                  Margin="5"/>
+        
+        <Label Content="Количество листов"
+       Margin="5"/>
+        <TextBox Text="{Binding SheetsCount}"
+         Margin="5"/>
+
+        
+
+        <Label Content="Разработал:"
+        Margin="5"/>
+        <TextBox Text="{Binding DesignedBy}"
+                 Margin="5"/>
+
+        <Label Content="Выберите виды для размешения"
+            Margin="5"/>
+        <ListBox ItemsSource="{Binding Views}"
+         SelectionMode="Extended"
+         DisplayMemberPath="Name"
+         MaxHeight="200"
+         ScrollViewer.VerticalScrollBarVisibility="Auto"
+         ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="IsSelected"
+                    Value="{Binding IsSelected}"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+        <Button Content="Создать листы" Command="{Binding CreateSheetsCommand}" Margin="5"/>
+
+    </StackPanel>
+</Window>
